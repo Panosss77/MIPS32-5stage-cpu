@@ -7,11 +7,14 @@ The processor implements a standard 5-stage pipeline and supports a subset of th
 The supported instructions include:
 
 R-type: add, sub, and, or, nor, slt, sll, sllv, xor
+
 I-type: lw, sw, addi, beq, bne
+
 J-type: j, jal
+
 
 The ALU control logic interprets the function codes for R-type instructions, while the main control module interprets opcodes to generate control signals for the pipeline.
 
 Pipeline Architecture:
-\
+
 The processor has IF, ID, EX, MEM, and WB stages with pipeline registers between each stage. Data hazards are handled with forwarding from EX/MEM and MEM/WB stages. Load-use hazards are detected by the hazard unit and resolved by stalling the pipeline. Branch and jump instructions trigger pipeline flushes when taken to ensure correct control flow.
